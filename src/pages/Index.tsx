@@ -23,7 +23,7 @@ const Index = () => {
       title: "Металл",
       description: "Прочность и современный вид изделий",
       icon: "Wrench",
-      image: "https://cdn.poehali.dev/projects/e09e0fcc-4937-422a-b413-44d896f17b6e/files/01588060-51da-4b68-b6d5-3a51e095b23f.jpg"
+      image: "https://cdn.poehali.dev/projects/e09e0fcc-4937-422a-b413-44d896f17b6e/files/0642714f-1afa-46ae-bee8-2529de8e3269.jpg"
     },
     {
       title: "Стекло",
