@@ -68,19 +68,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background">
+    <div className="min-h-screen bg-background relative">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,229,255,0.1),transparent_50%)] pointer-events-none"></div>
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+      
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 animate-pulse" style={{ animationDuration: '4s' }}></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
         
         <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight drop-shadow-[0_0_30px_rgba(0,229,255,0.5)]">
               Лазерная Гравировка
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium">
               Превращаем ваши идеи в реальность на дереве, металле, стекле и коже
             </p>
-            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform shadow-2xl">
+            <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-all shadow-[0_0_30px_rgba(0,229,255,0.5)] hover:shadow-[0_0_50px_rgba(0,229,255,0.8)] border border-primary/50">
               Заказать гравировку
               <Icon name="ArrowRight" className="ml-2" size={20} />
             </Button>
@@ -102,7 +106,7 @@ const Index = () => {
           {materials.map((material, index) => (
             <Card 
               key={index} 
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary cursor-pointer"
+              className="group overflow-hidden hover:shadow-[0_0_30px_rgba(0,229,255,0.3)] transition-all duration-300 hover:-translate-y-2 border-2 border-primary/30 hover:border-primary cursor-pointer bg-card/80 backdrop-blur-sm"
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -110,9 +114,10 @@ const Index = () => {
                   alt={material.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 text-white">
-                  <Icon name={material.icon as any} size={32} className="mb-2" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,229,255,0.2),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute bottom-4 left-4 text-primary">
+                  <Icon name={material.icon as any} size={32} className="mb-2 drop-shadow-[0_0_10px_rgba(0,229,255,0.8)]" />
                 </div>
               </div>
               <CardContent className="p-6">
@@ -140,8 +145,9 @@ const Index = () => {
                 key={index}
                 className="text-center group hover:scale-105 transition-transform duration-300"
               >
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary mb-6 group-hover:shadow-xl transition-shadow">
-                  <Icon name={benefit.icon as any} size={36} className="text-white" />
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary to-secondary mb-6 group-hover:shadow-[0_0_40px_rgba(0,229,255,0.6)] transition-all border-2 border-primary/50 relative">
+                  <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping group-hover:animate-none"></div>
+                  <Icon name={benefit.icon as any} size={36} className="text-background relative z-10" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">
                   {benefit.title}
